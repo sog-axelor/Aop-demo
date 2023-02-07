@@ -10,10 +10,12 @@
 <entity name="Student" lang="java">
 	<string name="firstName" />
 	<string name="lastName" />
-	<string name="city" />
+	<string name="city"  translatable="true" />
 	<string name="phoneNumber" />
 	<string name="state" />
 	<integer name="zip" />
-		
-</entity>	
+	<decimal name="price" precision="8" scale="2"/>
+	<binary name="photo" image="true" />
+	<string name="email" encrypted="true" />
+	</entity>	
 </domain-models>

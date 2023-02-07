@@ -11,6 +11,9 @@
        <field name="phoneNumber" />
         <field name="state" />
         <field name="zip" />
+        <field name="price" />
+           <field name="photo" />
+            <field name="email" />
     </grid>
 
 
@@ -22,6 +25,10 @@
        <field name="phoneNumber" />
         <field name="state" />
         <field name="zip" />
+                <field name="price" />
+                 <field name="photo" />
+                 <field name="email" />
+        
     </panel>
     </form>
   </object-views>
