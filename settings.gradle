@@ -1,0 +1,4 @@
+rootProject.name = 'Aop-demo'
+
+// Include modules
+ include "modules:student-module"
