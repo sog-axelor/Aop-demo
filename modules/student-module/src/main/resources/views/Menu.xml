@@ -12,4 +12,24 @@
 <view type="form" name="student-form"/>
 </action-view >
 
+<menuitem title="Address" name="student-root-address" parent="student-root" action ="action.student.root.address"/>
+<action-view name="action.student.root.address" title="Address" model="com.axelor.address.db.Address">
+<view type="grid" name="address-grid"/>
+<view type="form" name="address-form"/>
+</action-view >
+
+<menuitem title="People" name="student-root-people" parent="student-root" action ="action.student.root.people"/>
+<action-view name="action.student.root.people" title="People" model="com.axelor.student.db.People">
+<view type="grid" name="people-grid"/>
+<view type="form" name="people-form"/>
+</action-view >
+
+<menuitem title="School" name="student-root-school" parent="student-root" action ="action.student.root.school"/>
+<action-view name="action.student.root.school" title="People" model="com.axelor.student.db.School">
+<view type="grid" name="school-grid"/>
+<view type="form" name="school-form"/>
+</action-view >
+
+
+
   </object-views> 

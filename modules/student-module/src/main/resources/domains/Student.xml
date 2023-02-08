@@ -8,14 +8,17 @@
 <module name="student" package="com.axelor.student.db"/>
 
 <entity name="Student" lang="java">
-	<string name="firstName" />
+
+	<string name="firstName" required="true"/>
 	<string name="lastName" />
-	<string name="city"  translatable="true" />
-	<string name="phoneNumber" />
+	<string name="city"  translatable="true" massUpdate="true"/>
+	<string name="phoneNumber" required="true" />
 	<string name="state" />
-	<integer name="zip" />
-	<decimal name="price" precision="8" scale="2"/>
+	<integer name="zip" required="true"/>
+	<decimal name="fees" precision="8" scale="2"/>
 	<binary name="photo" image="true" />
-	<string name="email" encrypted="true" />
+	<string name="email" encrypted="true" unique="true" />
+	<boolean name="active" title="is Active" />
+	<many-to-one ref="com.axelor.student.db.School" name="school" title="School Name" />
 	</entity>	
 </domain-models>

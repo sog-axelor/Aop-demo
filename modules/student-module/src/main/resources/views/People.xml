@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+	<grid model="com.axelor.student.db.People" title="StudentRecord"
+		name="people-grid">
+		<field name="uniqueTestFeild" />
+		<field name="location" />
+		<field name="dob" />
+		<field name="dobTime" />
+		<field name="salaried" />
+		<field name="photo" />
+	</grid>
+
+<form  model="com.axelor.student.db.People" title="Student"
+		name="people-form">
+		<panel>
+			<field name="jsonDetails" />
+		<field name="uniqueTestFeild" />
+		<field name="location" />
+		<field name="reference" />
+		<field name="password" />
+		<field name="dob" />
+		<field name="dobTime" />
+		<field name="salaried" />
+		<field name="photo" />
+		</panel>
+	</form>
+
+</object-views>

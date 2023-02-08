@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models
+	xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+	http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+
+	<module name="address" package="com.axelor.address.db" />
+
+	<enum name="State">
+		<item name="GUJARAT" value="gujarat" />
+		<item name="MUMBAI" value="mumbai" />
+		<item name="RAJSTHAN" value="rajsthan" />
+		<item name="DELHI" value="delhi" />
+	</enum>
+
+	<entity name="Address" lang="java">
+		<string name="blockNo" title="Block No" />
+		<string name="roomNo" title="Room No" />
+
+		<string name="buildName" title="Building Name" />
+		<string name="society" title="Society Name" />
+		<integer name="zip" title="zip" />
+		<string name="village" title="Village Name" namecolumn="true"/>
+		<enum name="state" ref="State" />
+	<one-to-one ref="com.axelor.student.db.School" name="school" mappedBy="address" />
+	</entity>
+
+</domain-models>

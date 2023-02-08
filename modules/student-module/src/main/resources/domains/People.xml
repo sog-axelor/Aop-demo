@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models
+	xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+	http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+	<module name="student" package="com.axelor.student.db" />
+	<enum name="JOBS">
+	<item name="GOVERMENT" value="goverment"/>
+	<item name="PRIVATE" value="private"/>
+	</enum>
+	
+	<sequence name="people.reference" increment="1" initial="1"
+		padding="4" prefix="PE" suffix="AXE" />
+	<entity name="People" lang="java" jsonAttrs="false">
+		<string name="jsonDetails" json="false" />
+		<string name="uniqueTestFeild" title="unique Feild"
+			unique="true" min="1" max="10" namecolumn="true" />
+		<string name="location" large="true" multiline="true" />
+		<string name="reference" title="Refernces" sequence="" />
+		<string name="password" password="true" title="Password"
+			encrypted="true" />
+		<date name="dob" title="Date of Birth" />
+		<time name="dobTime" title="Birth time" />
+		<enum name="salaried" ref="JOBS"></enum>
+		<many-to-one ref="com.axelor.meta.db.MetaFile" name="photo" title="Photo" />
+	</entity>
+
+</domain-models>

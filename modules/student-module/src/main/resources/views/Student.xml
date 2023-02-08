@@ -1,34 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://axelor.com/xml/ns/object-views"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
   http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
 
-  <grid model="com.axelor.student.db.Student" title="StudentRecord" name="student-grid">
-    <field name="firstName" />
-     <field name="lastName" />
-      <field name="city" />
-       <field name="phoneNumber" />
-        <field name="state" />
-        <field name="zip" />
-        <field name="price" />
-           <field name="photo" />
-            <field name="email" />
-    </grid>
+	<grid model="com.axelor.student.db.Student" title="StudentRecord"
+		name="student-grid">
+		<field name="firstName" />
+		<field name="lastName" />
+		<field name="city" />
+		<field name="phoneNumber" />
+		<field name="state" />
+		<field name="zip" />
+		<field name="fees" />
+		<field name="photo" />
+		<field name="email" />
+		<field name="active" />
+		<field name="school" />
+	</grid>
 
 
-    <form model="com.axelor.student.db.Student" title="Student" name="student-form">
-    <panel>
-     <field name="firstName" />
-     <field name="lastName" />
-      <field name="city" />
-       <field name="phoneNumber" />
-        <field name="state" />
-        <field name="zip" />
-                <field name="price" />
-                 <field name="photo" />
-                 <field name="email" />
-        
-    </panel>
-    </form>
-  </object-views>
+	<form model="com.axelor.student.db.Student" title="Student"
+		name="student-form">
+		<panel>
+			<field name="firstName" />
+			<field name="lastName" />
+			<field name="city" />
+			<field name="phoneNumber" />
+			<field name="state" />
+			<field name="zip" />
+			<field name="fees" />
+			<field name="photo" />
+			<field name="email" />
+			<field name="active" />
+			<field name="school" />
+		</panel>
+	</form>
+</object-views>
