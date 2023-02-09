@@ -17,10 +17,10 @@
 <form  model="com.axelor.student.db.People" title="Student"
 		name="people-form">
 		<panel>
+		<field name="reference"/>
 			<field name="jsonDetails" />
 		<field name="uniqueTestFeild" />
 		<field name="location" />
-		<field name="reference" />
 		<field name="password" />
 		<field name="dob" />
 		<field name="dobTime" />

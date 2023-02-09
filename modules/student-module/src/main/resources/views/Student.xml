@@ -8,10 +8,7 @@
 		name="student-grid">
 		<field name="firstName" />
 		<field name="lastName" />
-		<field name="city" />
 		<field name="phoneNumber" />
-		<field name="state" />
-		<field name="zip" />
 		<field name="fees" />
 		<field name="photo" />
 		<field name="email" />
@@ -25,10 +22,7 @@
 		<panel>
 			<field name="firstName" />
 			<field name="lastName" />
-			<field name="city" />
 			<field name="phoneNumber" />
-			<field name="state" />
-			<field name="zip" />
 			<field name="fees" />
 			<field name="photo" />
 			<field name="email" />

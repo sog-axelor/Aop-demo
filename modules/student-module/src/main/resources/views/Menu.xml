@@ -25,7 +25,7 @@
 </action-view >
 
 <menuitem title="School" name="student-root-school" parent="student-root" action ="action.student.root.school"/>
-<action-view name="action.student.root.school" title="People" model="com.axelor.student.db.School">
+<action-view name="action.student.root.school" title="School" model="com.axelor.student.db.School">
 <view type="grid" name="school-grid"/>
 <view type="form" name="school-form"/>
 </action-view >

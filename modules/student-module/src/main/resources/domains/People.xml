@@ -18,7 +18,7 @@
 		<string name="uniqueTestFeild" title="unique Feild"
 			unique="true" min="1" max="10" namecolumn="true" />
 		<string name="location" large="true" multiline="true" />
-		<string name="reference" title="Refernces" sequence="" />
+		<string name="reference" title="Refernces" sequence="people.reference" readonly="true"/>
 		<string name="password" password="true" title="Password"
 			encrypted="true" />
 		<date name="dob" title="Date of Birth" />

@@ -1,24 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+<domain-models
+	xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
 	http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
 
 
-<module name="student" package="com.axelor.student.db"/>
+	<module name="student" package="com.axelor.student.db" />
 
-<entity name="Student" lang="java">
+	<entity name="Student" lang="java">
 
-	<string name="firstName" required="true"/>
-	<string name="lastName" />
-	<string name="city"  translatable="true" massUpdate="true"/>
-	<string name="phoneNumber" required="true" />
-	<string name="state" />
-	<integer name="zip" required="true"/>
-	<decimal name="fees" precision="8" scale="2"/>
-	<binary name="photo" image="true" />
-	<string name="email" encrypted="true" unique="true" />
-	<boolean name="active" title="is Active" />
-	<many-to-one ref="com.axelor.student.db.School" name="school" title="School Name" />
-	</entity>	
+		<string name="firstName" required="true" />
+		<string name="lastName" />
+
+		<string name="fullName" title="Full Name"
+			search="firstName,lastName">
+	<![CDATA[
+		return firstName + ":" + lastName;
+	]]>
+		</string>
+
+
+		<string name="phoneNumber" required="true" />
+		<decimal name="fees" precision="8" scale="2" />
+		<binary name="photo" image="true" />
+		<string name="email" encrypted="true" unique="true" />
+		<boolean name="active" title="is Active" />
+		<many-to-one ref="com.axelor.student.db.School"
+			name="school" title="School Name" />
+		<finder-method name="findByEmailAndPhone"
+			using="email,phoneNumber" />
+		<finder-method name="findAllByEmailAndPhone"
+			using="email,phoneNumber" all="true" />
+		<finder-method name="findByEmailOrPhone"
+			using="String:email,String:phoneNumber"
+			filter="self.email= :email OR self.phoneNumber = :phoneNumber" />
+
+
+	</entity>
 </domain-models>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
