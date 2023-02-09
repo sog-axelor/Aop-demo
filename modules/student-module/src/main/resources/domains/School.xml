@@ -16,7 +16,6 @@
 		
 				<extra-code>
 			<![CDATA[
-				
 				public static final String SCHOOL_TYPE_GOVERMENT = "goverment";
 				public static final String SCHOOL_TYPE_SEMI_GOVERMENT = "semi-goverment";
 				public static final String SCHOOL_TYPE_PRIVATE = "private";

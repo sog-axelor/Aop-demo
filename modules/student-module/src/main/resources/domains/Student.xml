@@ -16,7 +16,7 @@
 		<string name="fullName" title="Full Name"
 			search="firstName,lastName">
 	<![CDATA[
-		return firstName + ":" + lastName;
+		return firstName + " " + lastName;
 	]]>
 		</string>
 

@@ -5,10 +5,15 @@
   http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
 
 	<grid model="com.axelor.student.db.School" title="Schools"
-		name="school-grid" editable="true">
+		name="school-grid">
+		<toolbar>
+				<button onClick="clickMe" name="clickMeBtn" prompt="Are You Sure !!! (Form toolBar)" title="Click Me" icon="fa-print"/>
+		</toolbar>
+		<hilite if="address == null" color="danger"/>
 		<field name="schoolName" />
-		<field name="address" />
+		<field name="address"/>
 		<field name="schoolType" />
+	
 		<field name="studentList">
 			<grid title="Students">
 				<field name="firstName" />
@@ -30,6 +35,7 @@
 				<field name="active" />
 				<field name="school" />
 			</form>
+			
 		</field>
 	</grid>
 

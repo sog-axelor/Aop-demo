@@ -8,6 +8,7 @@
 		name="student-grid">
 		<field name="firstName" />
 		<field name="lastName" />
+		<field name="fullName"/>
 		<field name="phoneNumber" />
 		<field name="fees" />
 		<field name="photo" />
