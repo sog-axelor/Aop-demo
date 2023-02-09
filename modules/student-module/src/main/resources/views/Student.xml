@@ -19,7 +19,7 @@
 
 
 	<form model="com.axelor.student.db.Student" title="Student"
-		name="student-form">
+		name="student-form" onNew="action-student-record-onnew"   onSave="action-student-record-save" width="large">		<!-- onLoad="action-student-record-onload" -->
 		<panel>
 			<field name="firstName" />
 			<field name="lastName" />
@@ -31,4 +31,46 @@
 			<field name="school" />
 		</panel>
 	</form>
+	
+	<action-record name="action-student-record-save" model="com.axelor.student.db.Student">
+	<field name="active" expr="true"/>
+	</action-record>
+	
+		<!-- <action-validate name="action-student-record-onload">
+		<notify message="This is goverment school" if="school == schoolType.goverment"/>
+		</action-validate> -->
+	
+	<action-record name="action-student-record-onnew" model="com.axelor.student.db.Student" >
+	<field name="fees" expr="25000.00"/>
+	</action-record>
+	
+
+	
 </object-views>
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
