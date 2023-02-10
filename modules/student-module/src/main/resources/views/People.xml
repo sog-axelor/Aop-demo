@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
   http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
 
-	<grid model="com.axelor.student.db.People" title="StudentRecord"
+	<grid model="com.axelor.student.db.People" title="People Record"
 		name="people-grid">
 		<field name="uniqueTestFeild" />
 		<field name="location" />
@@ -14,19 +14,66 @@
 		<field name="photo" />
 	</grid>
 
-<form  model="com.axelor.student.db.People" title="Student"
+	<form model="com.axelor.student.db.People" title="People form"
 		name="people-form">
-		<panel>
-		<field name="reference"/>
-			<field name="jsonDetails" />
-		<field name="uniqueTestFeild" />
-		<field name="location" />
-		<field name="password" />
-		<field name="dob" />
-		<field name="dobTime" />
-		<field name="salaried" />
-		<field name="photo" />
+		<panel name="mainPanel" title="Main panel" onTabSelect="action-people-json">
+			<field name="reference" />
+			<!-- <help>Note : This is your reference Id </help>
+			<label title="This is label"  /> -->
+			
+			<!-- <spacer/>
+			<static>THis is static</static> -->
+			
+			<field name="jsonDetails" widget="json-raw" />
+			<field name="uniqueTestFeild" />
+			<field name="location" />
+			<field name="password" />
+		</panel>
+
+		<panel-tabs>
+			<panel name="personalDetailPanel" title="Personal Detail" onTabSelect="action-people-salaried">
+				<field name="salaried" />
+				<field name="photo" />
+			</panel>
+			<panel name="TimeandDatePanel" title="Birth Timezone" onTabSelect="action-people-dob">
+				<field name="dob" />
+				<field name="dobTime" />
+			</panel>
+		</panel-tabs>
+		<panel name="buttonPanel1" sidebar="true">
+			<button onClick="action-people-json" name="validBtn" title="validate"/>
 		</panel>
 	</form>
+	
+	<action-record name="action-people-salaried" model="com.axelor.student.db.People">
+	<field name="salaried" expr="Private" if="salaried == null"/>
+	</action-record>
+	
+	<action-record name="action-people-dob" model="com.axelor.student.db.People">
+	<field name="dob" expr="eval:__date__" if="dob == null"/>
+	</action-record>
+	<action-validate name="action-people-json">
+		<info message="fill the json detail " if ="jsonDetails == null"/>
+	</action-validate>
+	
+	
 
 </object-views>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

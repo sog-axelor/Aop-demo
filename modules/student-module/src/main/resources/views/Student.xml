@@ -8,7 +8,7 @@
 		name="student-grid">
 		<field name="firstName" />
 		<field name="lastName" />
-		<field name="fullName"/>
+		<field name="fullName" />
 		<field name="phoneNumber" />
 		<field name="fees" />
 		<field name="photo" />
@@ -19,33 +19,40 @@
 
 
 	<form model="com.axelor.student.db.Student" title="Student"
-		name="student-form" onNew="action-student-record-onnew"   onSave="action-student-record-save" width="large">		<!-- onLoad="action-student-record-onload" -->
-		<panel>
-			<field name="firstName" />
-			<field name="lastName" />
-			<field name="phoneNumber" />
-			<field name="fees" />
-			<field name="photo" />
-			<field name="email" />
-			<field name="active" />
-			<field name="school" />
+		name="student-form" onNew="action-student-record-onnew"
+		onSave="action-student-record-save" width="large">		<!-- onLoad="action-student-record-onload" -->
+		<panel name="mainPanel" title="Student Form">
+		
+			<panel name="innerPaner1" colSpan="7" title="Inner Panel 1" canCollapse="true">
+				<field name="firstName" />
+				<field name="lastName" />
+				<field name="phoneNumber" />
+				<field name="fees" />
+			</panel>
 		</panel>
+		<panel name="innerPaner2" colSpan="5" title="Inner Panel 2" hideIf="fees &lt;=25000.00"   canCollapse="true"> 		<!-- stacked="true" itemSpan="4"  attached="true"  sidebar="true"  -->
+				<field name="photo" />
+				<field name="email" />
+				<field name="active"/>
+				<field name="school"  widget="NavSelect" />
+			</panel>	
 	</form>
-	
-	<action-record name="action-student-record-save" model="com.axelor.student.db.Student">
-	<field name="active" expr="true"/>
-	</action-record>
-	
-		<!-- <action-validate name="action-student-record-onload">
-		<notify message="This is goverment school" if="school == schoolType.goverment"/>
-		</action-validate> -->
-	
-	<action-record name="action-student-record-onnew" model="com.axelor.student.db.Student" >
-	<field name="fees" expr="25000.00"/>
-	</action-record>
-	
 
-	
+	<action-record name="action-student-record-save"
+		model="com.axelor.student.db.Student">
+		<field name="active" expr="true" />
+	</action-record>
+
+	<!-- <action-validate name="action-student-record-onload"> <notify message="This 
+		is goverment school" if="school == schoolType.goverment"/> </action-validate> -->
+
+	<action-record name="action-student-record-onnew"
+		model="com.axelor.student.db.Student">
+		<field name="fees" expr="25000.00" />
+	</action-record>
+
+
+
 </object-views>
 
 

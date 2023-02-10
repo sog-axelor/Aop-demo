@@ -7,13 +7,15 @@
 	<grid model="com.axelor.student.db.School" title="Schools"
 		name="school-grid">
 		<toolbar>
-				<button onClick="clickMe" name="clickMeBtn" prompt="Are You Sure !!! (Form toolBar)" title="Click Me" icon="fa-print"/>
+			<button onClick="clickMe" name="clickMeBtn"
+				prompt="Are You Sure !!! (Form toolBar)" title="Click Me"
+				icon="fa-print" />
 		</toolbar>
-		<hilite if="address == null" color="danger"/>
+		<hilite if="address == null" color="danger" />
 		<field name="schoolName" />
-		<field name="address"/>
+		<field name="address" />
 		<field name="schoolType" />
-	
+
 		<field name="studentList">
 			<grid title="Students">
 				<field name="firstName" />
@@ -26,7 +28,7 @@
 				<field name="school" />
 			</grid>
 			<form title="Student">
-			<field name="firstName" />
+				<field name="firstName" />
 				<field name="lastName" />
 				<field name="phoneNumber" />
 				<field name="fees" />
@@ -35,20 +37,22 @@
 				<field name="active" />
 				<field name="school" />
 			</form>
-			
+
 		</field>
 	</grid>
 
 	<form model="com.axelor.student.db.School" title="School"
-		name="school-form">
+		name="school-form" width="large">
 		<panel>
+
 			<field name="schoolName" />
 			<field name="address" />
 			<field name="schoolType" />
-			<panel-related field="studentList" />
-			<panel-related field="peopleSet" />
 		</panel>
-
+		<panel-tabs>
+			<panel-related field="studentList" colSpan="12" />
+			<panel-related field="peopleSet" colSpan="12" x-selector="checkbox"/>
+		</panel-tabs>
 	</form>
 
 </object-views>
