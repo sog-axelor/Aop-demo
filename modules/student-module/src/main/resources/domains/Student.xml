@@ -12,7 +12,7 @@
 
 		<string name="firstName" required="true" />
 		<string name="lastName" />
-
+			<integer name="sequence" />
 		<string name="fullName" title="Full Name"
 			search="firstName,lastName">
 	<![CDATA[

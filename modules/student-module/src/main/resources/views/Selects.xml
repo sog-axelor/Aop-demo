@@ -9,4 +9,12 @@
    <option value="semi-goverment">Semi-Goverment</option>
     <option value="private">Private</option>
   </selection>
+  
+  <selection name="student.project.status.select">
+  	<option value="0">Draft</option>
+  	<option value="1" >Validate</option>
+  	<option value="2" >In Progress</option>
+  	<option value="3" >Finish</option>
+  	<option value="4" >Cancel</option>
+  </selection>
   </object-views>

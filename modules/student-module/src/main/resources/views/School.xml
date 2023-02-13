@@ -50,9 +50,51 @@
 			<field name="schoolType" />
 		</panel>
 		<panel-tabs>
-			<panel-related field="studentList" colSpan="12" />
-			<panel-related field="peopleSet" colSpan="12" x-selector="checkbox"/>
+			<panel-related field="studentList" colSpan="12"
+				canMove="true" orderBy="firstName" />
+			<panel-related field="peopleSet" colSpan="12"
+				x-selector="checkbox" />
+			<panel title="Students editor">
+				<field name="studentList" showTitle="false">
+					<viewer>
+						<![CDATA[
+							<strong>{{record.firstName}}</strong>
+							<h4><{{record.phoneNumber}}</h4>	
+						]]>
+					</viewer>
+					<editor >
+
+						<field name="firstName" />
+						<field name="phoneNumber" />
+					</editor>
+				</field>
+			</panel>
+			
+			<panel title="Students editor1">
+				<field name="studentList" showTitle="false">
+						
+					<editor x-viewer="true">
+
+						<field name="firstName" />
+						<field name="phoneNumber" />
+					</editor>
+				</field>
+			</panel>
 		</panel-tabs>
 	</form>
 
 </object-views>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

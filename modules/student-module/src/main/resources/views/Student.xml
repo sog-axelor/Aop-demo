@@ -5,7 +5,7 @@
   http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
 
 	<grid model="com.axelor.student.db.Student" title="StudentRecord"
-		name="student-grid">
+		name="student-grid" canMove="true">
 		<field name="firstName" />
 		<field name="lastName" />
 		<field name="fullName" />
@@ -22,21 +22,52 @@
 		name="student-form" onNew="action-student-record-onnew"
 		onSave="action-student-record-save" width="large">		<!-- onLoad="action-student-record-onload" -->
 		<panel name="mainPanel" title="Student Form">
-		
-			<panel name="innerPaner1" colSpan="7" title="Inner Panel 1" canCollapse="true">
+
+			<panel name="innerPaner1" colSpan="7" title="Inner Panel 1"
+				canCollapse="true">
 				<field name="firstName" />
 				<field name="lastName" />
 				<field name="phoneNumber" />
 				<field name="fees" />
+				<field name="sequence" hidden="true" />
 			</panel>
 		</panel>
-		<panel name="innerPaner2" colSpan="5" title="Inner Panel 2" hideIf="fees &lt;=25000.00"   canCollapse="true"> 		<!-- stacked="true" itemSpan="4"  attached="true"  sidebar="true"  -->
-				<field name="photo" />
-				<field name="email" />
-				<field name="active"/>
-				<field name="school"  widget="NavSelect" />
-			</panel>	
+		<panel name="innerPaner2" colSpan="5" title="Inner Panel 2"
+			hideIf="fees &lt;=25000.00" canCollapse="true"> 		<!-- stacked="true" itemSpan="4" attached="true" sidebar="true" -->
+			<field name="photo" />
+			<field name="email" />
+			<field name="active" />
+			<field name="school" widget="NavSelect" />
+		</panel>
 	</form>
+
+	<cards name="student-card" model="com.axelor.student.db.Student"
+		title="Student Card">
+		<field name="firstName" />
+		<field name="lastName" />
+		<field name="fullName" />
+		<field name="phoneNumber" />
+		<field name="fees" />
+		<field name="photo" />
+		<field name="email" />
+		<field name="school" />
+		<template>
+			<![CDATA[
+			  <div class="span4 card-image">
+  		<img ng-src="{{$image('photo', 'image')}}">
+		    </div>
+		    <div class="span8">
+		    <strong>{{firstName}}</strong><br>
+		     <strong>{{lastName}}</strong><br>
+		      <strong>{{fullName}}</strong><br>
+		       <strong>{{phoneNumber}}</strong><br>
+		     <strong>{{fees}}</strong><br>
+		      <strong>{{email}}</strong><br>
+		    </div>
+			]]>
+			</template>
+	</cards>
+
 
 	<action-record name="action-student-record-save"
 		model="com.axelor.student.db.Student">
@@ -59,7 +90,13 @@
 
 	
 
-
+	<!--     <strong>{{lastName}}</strong>
+		    <strong>{{fullName}}</strong>
+		    <strong>{{phoneNumber}}</strong>
+		    <strong>{{fees}}</strong> 
+		    <strong>{{email}}</strong> 
+		    <strong>{{school}}</strong>
+		           -->
 
 
 

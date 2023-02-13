@@ -16,14 +16,15 @@
 
 	<form model="com.axelor.student.db.People" title="People form"
 		name="people-form">
-		<panel name="mainPanel" title="Main panel" onTabSelect="action-people-json">
+		<panel name="mainPanel" title="Main panel"
+			onTabSelect="action-people-json">
 			<field name="reference" />
-			<!-- <help>Note : This is your reference Id </help>
-			<label title="This is label"  /> -->
-			
-			<!-- <spacer/>
-			<static>THis is static</static> -->
-			
+			<!-- <help>Note : This is your reference Id </help> <label title="This 
+				is label" /> -->
+
+			<!-- <spacer/> <static>THis is static</static> -->
+			<field name="$isValidate" title="Validation" type="one-to-many"
+				target="com.axelor.address.db.Address" colSpan="12" />
 			<field name="jsonDetails" widget="json-raw" />
 			<field name="uniqueTestFeild" />
 			<field name="location" />
@@ -31,32 +32,71 @@
 		</panel>
 
 		<panel-tabs>
-			<panel name="personalDetailPanel" title="Personal Detail" onTabSelect="action-people-salaried">
+			<panel name="personalDetailPanel" title="Personal Detail"
+				onTabSelect="action-people-salaried">
 				<field name="salaried" />
 				<field name="photo" />
 			</panel>
-			<panel name="TimeandDatePanel" title="Birth Timezone" onTabSelect="action-people-dob">
+			<panel name="TimeandDatePanel" title="Birth Timezone"
+				onTabSelect="action-people-dob">
 				<field name="dob" />
 				<field name="dobTime" />
 			</panel>
 		</panel-tabs>
 		<panel name="buttonPanel1" sidebar="true">
-			<button onClick="action-people-json" name="validBtn" title="validate"/>
+			<button onClick="action-people-json,action-fill-validated"
+				name="validBtn" title="validate" />
 		</panel>
 	</form>
-	
-	<action-record name="action-people-salaried" model="com.axelor.student.db.People">
-	<field name="salaried" expr="Private" if="salaried == null"/>
+
+	<cards name="people-cards" model="com.axelor.student.db.People"
+		title="People">
+		<field name="uniqueTestFeild" />
+		<field name="location" />
+		<field name="dob" />
+		<field name="dobTime" />
+		<field name="salaried" />
+		<field name="photo" />
+
+		<template>
+			<![CDATA[
+			<div class="span4 card-image">
+			    <img ng-if="photo" ng-src="{{$image(null, 'image')}}">
+			    <strong>{{location}}</strong>
+			    			    <strong>{{uniqueTestFeild}}</strong>
+			    			    <strong>{{location}}</strong>
+			    			    <strong>{{salaried}}</strong>
+			   					<strong>{{dob}}</strong>
+			    			    <strong>{{dobTime}}</strong>
+			    
+			  </div>
+			]]>
+		</template>
+	</cards>
+
+
+
+
+	<action-record name="action-people-salaried"
+		model="com.axelor.student.db.People">
+		<field name="salaried" expr="Private" if="salaried == null" />
 	</action-record>
-	
-	<action-record name="action-people-dob" model="com.axelor.student.db.People">
-	<field name="dob" expr="eval:__date__" if="dob == null"/>
+
+	<action-record name="action-people-dob"
+		model="com.axelor.student.db.People">
+		<field name="dob" expr="eval:__date__" if="dob == null" />
 	</action-record>
 	<action-validate name="action-people-json">
-		<info message="fill the json detail " if ="jsonDetails == null"/>
+		<info message="fill the json detail " if="jsonDetails == null"
+			action="action-fill-validated" />
 	</action-validate>
-	
-	
+
+	<action-record name="action-fill-validated"
+		model="com.axelor.student.db.People">
+		<field name="$isValidate" expr="eval : true" />
+	</action-record>
+
+
 
 </object-views>
 

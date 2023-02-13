@@ -4,14 +4,17 @@
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views
   http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
 
-<menuitem title="Student-Record" name="student-root" />
+<menuitem title="Student-Record" name="student-root" icon="fa-solid fa-cubes" />
 
-<menuitem title="Student" name="student-root-student" parent="student-root" action ="action.student.root.student"/>
+<menuitem title="Student" name="student-root-student" parent="student-root" action ="action.student.root.student" icon="fa-graduation-cap" tag-count="true"/>
 <action-view name="action.student.root.student" title="Students" model="com.axelor.student.db.Student">
 <view type="grid" name="student-grid"/>
 <view type="form" name="student-form"/>
+<view type="cards" name="student-card	"/>
+
 </action-view >
 
+<!-- <menuitem title="student-root-student" name="Student" top="true" left="false"/> -->
 <menuitem title="Address" name="student-root-address" parent="student-root" action ="action.student.root.address"/>
 <action-view name="action.student.root.address" title="Address" model="com.axelor.address.db.Address">
 <view type="grid" name="address-grid"/>
@@ -22,6 +25,7 @@
 <action-view name="action.student.root.people" title="People" model="com.axelor.student.db.People">
 <view type="grid" name="people-grid"/>
 <view type="form" name="people-form"/>
+<view type="cards" name="people-cards"/>
 </action-view >
 
 <menuitem title="School" name="student-root-school" parent="student-root" action ="action.student.root.school"/>
@@ -30,6 +34,10 @@
 <view type="form" name="school-form"/>
 </action-view >
 
-
+<menuitem title="Project" name="student-root-project" parent="student-root" action="action.student.root.project"/>
+<action-view name="action.student.root.project" title="Project" model="com.axelor.student.db.Project">
+<view type="kanban" name="project-kanban"/>
+<view type="form" name="project-form"/>
+</action-view>
 
   </object-views> 
