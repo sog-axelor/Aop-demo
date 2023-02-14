@@ -54,7 +54,7 @@
 		<template>
 			<![CDATA[
 			  <div class="span4 card-image">
-  		<img ng-src="{{$image('photo', 'image')}}">
+  		<img ng-src="{{$image(null, 'photo')}}">
 		    </div>
 		    <div class="span8">
 		    <strong>{{firstName}}</strong><br>
@@ -63,6 +63,7 @@
 		       <strong>{{phoneNumber}}</strong><br>
 		     <strong>{{fees}}</strong><br>
 		      <strong>{{email}}</strong><br>
+		       <strong>{{school.schoolName}}</strong><br>
 		    </div>
 			]]>
 			</template>
@@ -87,16 +88,6 @@
 </object-views>
 
 
-
-	
-
-	<!--     <strong>{{lastName}}</strong>
-		    <strong>{{fullName}}</strong>
-		    <strong>{{phoneNumber}}</strong>
-		    <strong>{{fees}}</strong> 
-		    <strong>{{email}}</strong> 
-		    <strong>{{school}}</strong>
-		           -->
 
 
 

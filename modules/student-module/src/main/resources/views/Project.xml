@@ -30,9 +30,9 @@
 	</kanban>
 
 	<form model="com.axelor.student.db.Project" title="Project Detail"
-		name="project-form">
+		name="project-form" onLoad="action-attr-set-attr">
 		<panel name="mainPanel" title="Main Panel">
-			<field name="statusSelect" showTitle="false" widget="NavSelect" />
+			<field name="statusSelect" showTitle="false" widget="NavSelect"  onChange="action-project-group-status-onchange"/>
 			<field name="name" />
 			<field name="percentage" />
 			<field name="description" widget="html" colSpan="12" />
@@ -47,6 +47,16 @@
 		<field name="name" expr="eval: _value"/>
 	</action-record>
 	
+	<action-group name="action-project-group-status-onchange">
+		<action name="save"/>
+		<action name="action-attr-set-attr"/>
+			<action name="save"/>	
+	</action-group>
+	
+	<action-attrs name="action-attr-set-attr">
+		<attribute name="readonly" for="name" expr="eval: true" if ="statusSelect &gt;=1"/>
+		<attribute name="collapse" for="mainPanel" expr="eval: statusSelect == 1"/>
+	</action-attrs>
 
 	
 </object-views>
