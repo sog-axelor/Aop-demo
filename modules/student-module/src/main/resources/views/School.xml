@@ -14,10 +14,10 @@
 		<hilite if="address == null" color="danger" />
 		<field name="schoolName" />
 		<field name="address" />
-		<field name="schoolType" />
-
+		<field name="schoolType"/>
 		<field name="studentList">
-			<grid title="Students">
+
+<!-- 			<grid title="Students">
 				<field name="firstName" />
 				<field name="lastName" />
 				<field name="phoneNumber" />
@@ -36,7 +36,7 @@
 				<field name="email" />
 				<field name="active" />
 				<field name="school" />
-			</form>
+			</form> -->
 
 		</field>
 	</grid>
@@ -54,7 +54,7 @@
 				canMove="true" orderBy="firstName" />
 			<panel-related field="peopleSet" colSpan="12"
 				x-selector="checkbox" />
-			<panel title="Students editor">
+			<!-- <panel title="Students editor">
 				<field name="studentList" showTitle="false">
 					<viewer>
 						<![CDATA[
@@ -62,24 +62,24 @@
 							<h4><{{record.phoneNumber}}</h4>	
 						]]>
 					</viewer>
-					<editor >
+					<editor>
 
 						<field name="firstName" />
 						<field name="phoneNumber" />
 					</editor>
 				</field>
 			</panel>
-			
+
 			<panel title="Students editor1">
 				<field name="studentList" showTitle="false">
-						
+
 					<editor x-viewer="true">
 
 						<field name="firstName" />
 						<field name="phoneNumber" />
 					</editor>
 				</field>
-			</panel>
+			</panel> -->
 		</panel-tabs>
 	</form>
 

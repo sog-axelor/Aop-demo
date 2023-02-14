@@ -7,9 +7,12 @@
 	
 		<module name="school" package="com.axelor.student.db" />
 		<entity name="School" lang="java">
-		<string name="schoolName" title="School Name" namecolumn="true"></string>
-		<string name="schoolType" title="School Type"  selection="student.school.school.type"></string>
+		
+		<string name="schoolName" title="School Name" namecolumn="true" />
+		<string name="schoolType" title="School Type"  selection="student.school.school.type" />
 		<one-to-one ref="com.axelor.address.db.Address" name="address"/>
+		
+		
 		<one-to-many ref="com.axelor.student.db.Student" name="studentList" title="Students" mappedBy="school"/>
 		<many-to-many ref="com.axelor.student.db.People" name="peopleSet" title="People"/>
 		
@@ -19,6 +22,7 @@
 				public static final String SCHOOL_TYPE_GOVERMENT = "goverment";
 				public static final String SCHOOL_TYPE_SEMI_GOVERMENT = "semi-goverment";
 				public static final String SCHOOL_TYPE_PRIVATE = "private";
+				
 			]]>
 	</extra-code>
 		

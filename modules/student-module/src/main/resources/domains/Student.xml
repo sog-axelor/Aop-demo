@@ -12,7 +12,7 @@
 
 		<string name="firstName" required="true" />
 		<string name="lastName" />
-			<integer name="sequence" />
+		<integer name="sequence" />
 		<string name="fullName" title="Full Name"
 			search="firstName,lastName">
 	<![CDATA[
@@ -26,8 +26,11 @@
 		<binary name="photo" image="true" />
 		<string name="email" encrypted="true" unique="true" />
 		<boolean name="active" title="is Active" />
+		
 		<many-to-one ref="com.axelor.student.db.School"
 			name="school" title="School Name" />
+			
+			
 		<finder-method name="findByEmailAndPhone"
 			using="email,phoneNumber" />
 		<finder-method name="findAllByEmailAndPhone"

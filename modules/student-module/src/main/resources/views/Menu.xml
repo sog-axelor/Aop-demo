@@ -19,7 +19,6 @@
 <action-view name="action.student.root.address" title="Address" model="com.axelor.address.db.Address">
 <view type="grid" name="address-grid"/>
 <view type="form" name="address-form"/>
-<domain>self.location =: location</domain>
 <context name="location" expr="Surat-Gujarat"/>
 </action-view >
 

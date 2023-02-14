@@ -33,7 +33,7 @@
 			</panel>
 		</panel>
 		<panel name="innerPaner2" colSpan="5" title="Inner Panel 2"
-			hideIf="fees &lt;=25000.00" canCollapse="true"> 		<!-- stacked="true" itemSpan="4" attached="true" sidebar="true" -->
+			 canCollapse="true"> 		<!-- stacked="true" itemSpan="4" attached="true" sidebar="true" -->  <!-- hideIf="fees &lt;=25000.00" -->
 			<field name="photo" />
 			<field name="email" />
 			<field name="active" />
