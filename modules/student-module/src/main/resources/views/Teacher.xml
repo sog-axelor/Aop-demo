@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+
+	<grid model="com.axelor.student.db.Teacher" title="Teacher"
+		name="teacher-grid">
+		<field name="fName" />
+		<field name="qual" />
+		<field name="address" />
+		<field name="schoolName" />
+		<field name="schoolList" />
+	</grid>
+
+	<form model="com.axelor.student.db.Teacher" title="Teacher"
+		name="teacher-form" width="large" readonlyIf="id"
+		onLoad="validate.qual" canAttach="false">
+
+		<panel name="mainPanel" >
+			<panel name="innerPanel1" colSpan="5" title="Form panel" stacked="true">
+				<field name="fName" />
+				<field name="qual" widget="NavSelect" />
+				<field name="address" />
+				<field name="schoolName" />
+			</panel>
+		</panel>
+		<panel name="innerPanel2" colSpan="7" title="User Panel" sidebar="true">		<!-- attached="true" -->
+				<field name="schoolList" colSpan="12"/>
+			</panel>
+	</form>
+
+	<action-validate name="validate.qual">
+		<notify message="Only post graduate can fill this form "
+			if="qual== Qualification.POST_GRADUATION" />
+		<notify message="Only phd can fill this form "
+			if="qual== Qualification.PHD" />
+	</action-validate>
+</object-views>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

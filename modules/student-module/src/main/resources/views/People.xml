@@ -11,11 +11,13 @@
 		<field name="dob" />
 		<field name="dobTime" />
 		<field name="salaried" />
-		<field name="photo" widget="Image"  />
+		<field name="photo" widget="Image" />
 	</grid>
 
 	<form model="com.axelor.student.db.People" title="People form"
-		name="people-form" onNew="action-fill-location" onLoad="action-method-people-check-possiblity"> 
+		name="people-form" onNew="action-fill-location"
+		onLoad="action-method-people-check-possiblity">
+		
 		<panel name="mainPanel" title="Main panel"
 			onTabSelect="action-people-json">
 			<field name="reference" />
@@ -23,15 +25,18 @@
 				is label" /> -->
 
 			<!-- <spacer/> <static>THis is static</static> -->
-			<field name="$isValidate" title="Validation" type="one-to-many"
-				target="com.axelor.address.db.Address" colSpan="12" />
-			<field name="jsonDetails" widget="json-raw" />
-			
-			<field name="uniqueTestFeild" onChange="save,action-method-people-check-possiblity" />
-			
+			<!-- <field name="$isValidate" title="Validation" type="one-to-many"
+				target="com.axelor.address.db.Address" colSpan="12" /> -->
+				
+			<field name="jsonDetails" widget="json-raw" /> 		<!-- widget="json-raw" -->
+
+			<field name="uniqueTestFeild"
+				onChange="save,action-method-people-check-possiblity" />
+
 			<field name="location" />
 			<field name="password" />
 		</panel>
+		
 
 		<panel-tabs>
 			<panel name="personalDetailPanel" title="Personal Detail"
@@ -45,6 +50,7 @@
 				<field name="dobTime" />
 			</panel>
 		</panel-tabs>
+		
 		<panel name="buttonPanel1" sidebar="true">
 			<button onClick="action-people-json,action-fill-validated"
 				name="validBtn" title="validate" />
@@ -63,7 +69,7 @@
 		<template>
 			<![CDATA[
 			<div class="span4 card-image">
-			    <img ng-if="photo" ng-src="{{$image(null, 'image')}}">
+			   <img ng-src="{{$image(null, 'photo')}}">
 			    <strong>{{location}}</strong>
 			    			    <strong>{{uniqueTestFeild}}</strong>
 			    			    <strong>{{location}}</strong>
@@ -98,13 +104,16 @@
 		<field name="$isValidate" expr="eval : true" />
 	</action-record>
 
-	<action-record name="action-fill-location" model="com.axelor.student.db.People">
-		<field name="location" expr="eval: _location"/>
+	<action-record name="action-fill-location"
+		model="com.axelor.student.db.People">
+		<field name="location" expr="eval: _location" />
 	</action-record>
-	
-	
-	<action-method name="action-method-people-check-possiblity">
-		<call class="com.axelor.student.web.PeopleController" method="checkPossibility"/>
+
+
+	<action-method
+		name="action-method-people-check-possiblity">
+		<call class="com.axelor.student.web.PeopleController"
+			method="checkPossibility" />
 	</action-method>
 
 </object-views>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models
+	xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+	http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+	
+			<module name="teacher" package="com.axelor.student.db" />
+		
+		<enum name="Qualification">
+			<item name="GRADUATION" value="graduation"/>
+			<item name="POST_GRADUATION" value="post graduation"/>
+			<item name="PHD" value="phd"/>
+		</enum>
+			<entity name="Teacher" lang="java">
+				<string name="fName"  title="Full Name"/>
+				<enum name="qual" ref="Qualification" />
+				
+		<one-to-one ref="com.axelor.address.db.Address" name="address"/>
+		<many-to-one ref="com.axelor.student.db.School" name="schoolName"/>
+		
+		<one-to-many ref="com.axelor.student.db.School" name="schoolList" title="School"/>			
+				
+			 </entity>
+		
+	
+</domain-models>

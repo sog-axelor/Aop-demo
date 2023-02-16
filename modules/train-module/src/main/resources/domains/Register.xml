@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models
+	xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+	http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+
+	<module name="register" package="com.axelor.auth.db" />
+
+	<enum name="STATE">
+	<item name="GUJARAT" value="gujarat"/>
+	<item name="MUMBAI" value="mumbai"/>
+	<item name="GOA" value="goa"/>
+	<item name="RAJSTHAN" value="rajsthan"/>
+	<item name="DELHI" value="delhi"/>
+	<item name="BIHAR" value="bihar"/>
+	<item name="ASSAM" value="assam"/>
+	<item name="BANGLURU" value="bangluru"/>
+	</enum>
+	
+	<entity name="Register" lang="java">
+		<string name="fName" title="First Name" />
+		<string name="mName" title="Middle Name" />
+		<string name="lName" title="Last Name" />
+		
+		<string name="fullName" title="Full Name"
+			search="fName,mName,lName">
+			<![CDATA[
+				return fName + " " + mName + " "  + lName;
+			]]>
+		</string>
+		
+		<string name="phoneNumber"  title="Phone Number"/>
+		<string name="email"  title="Email Id" />
+		<string name="address" large="true" multiline="true" />
+		<enum name="state" ref="STATE"/>
+		<binary name="image" image="true" />
+		<string name="password" encrypted="true" />
+		
+	</entity>
+	
+
+</domain-models>

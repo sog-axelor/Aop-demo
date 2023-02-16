@@ -48,6 +48,7 @@
 			<field name="schoolName" />
 			<field name="address" />
 			<field name="schoolType" />
+			<field name="email" />
 		</panel>
 		<panel-tabs>
 			<panel-related field="studentList" colSpan="12"

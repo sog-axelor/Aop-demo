@@ -6,12 +6,14 @@
 	http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
 	
 		<module name="school" package="com.axelor.student.db" />
-		<entity name="School" lang="java">
+		<entity name="School" lang="java">	
 		
-		<string name="schoolName" title="School Name" namecolumn="true" />
+		<string name="schoolName" title="School Name" namecolumn="true" />				//1.one to one 
 		<string name="schoolType" title="School Type"  selection="student.school.school.type" />
+		
 		<one-to-one ref="com.axelor.address.db.Address" name="address"/>
 		
+		<many-to-one ref="com.axelor.student.db.Student" name="email" title="Email id"/>
 		
 		<one-to-many ref="com.axelor.student.db.Student" name="studentList" title="Students" mappedBy="school"/>
 		<many-to-many ref="com.axelor.student.db.People" name="peopleSet" title="People"/>

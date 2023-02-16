@@ -18,15 +18,14 @@
 	<![CDATA[
 		return firstName + " " + lastName;
 	]]>
-		</string>
-
+		</string>	
 
 		<string name="phoneNumber" required="true" />
 		<decimal name="fees" precision="8" scale="2" />
 		<binary name="photo" image="true" />
-		<string name="email" encrypted="true" unique="true" />
+		<string name="email" encrypted="true" unique="true" namecolumn="true" />
 		<boolean name="active" title="is Active" />
-		
+	
 		<many-to-one ref="com.axelor.student.db.School"
 			name="school" title="School Name" />
 			

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+ <menuitem name="user-record"  title="Users" icon="fa-solid fa-users"  />
+
+  <menuitem name="user" parent="user-record"
+    title="User Record"
+    action="register.all" icon="fa-solid fa-user"/>
+
+  <action-view name="register.all" title="Register" model="com.axelor.auth.db.Register">
+  <view type="grid" name="register-grid"/>
+    <view type="form" name="register-form"/>
+    
+  </action-view></object-views>

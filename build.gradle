@@ -34,6 +34,7 @@ allprojects {
 
 dependencies {
   implementation project(':modules:student-module')
+ implementation project(':modules:train-module')
 }
 war {
   archiveFileName = 'Aop-demo.war'

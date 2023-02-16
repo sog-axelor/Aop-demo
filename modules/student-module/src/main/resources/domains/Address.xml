@@ -19,7 +19,7 @@
 		<string name="name" title="Name" />
 		<string name="completeAdd" title="Complete Address"/>
 		<enum name="state" ref="State" />
-	<one-to-one ref="com.axelor.student.db.School" name="school" mappedBy="address" />
+		<one-to-one ref="com.axelor.student.db.School" name="school" mappedBy="address" />			<!-- mappedBy="address"  -->
 	</entity>
 
 </domain-models>

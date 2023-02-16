@@ -11,7 +11,6 @@
 <view type="grid" name="student-grid"/>
 <view type="form" name="student-form"/>
 <view type="cards" name="student-card	"/>
-
 </action-view >
 
 <!-- <menuitem title="student-root-student" name="Student" top="true" left="false"/> -->
@@ -30,6 +29,14 @@
 
 </action-view >
 
+
+<menuitem title="Teacher" name="student-root-teacher" parent="student-root" action ="action.student.root.teacher" tag-count="true" icon="fa-regular fa-person-chalkboard"/>
+<action-view name="action.student.root.teacher" title="Teacher" model="com.axelor.student.db.Teacher">
+<view type="grid" name="teacher-grid"/>
+<view type="form" name="teacher-form"/>
+</action-view >
+
+
 <menuitem title="School" name="student-root-school" parent="student-root" action ="action.student.root.school"/>
 <action-view name="action.student.root.school" title="School" model="com.axelor.student.db.School">
 <view type="grid" name="school-grid"/>
@@ -41,6 +48,4 @@
 <view type="kanban" name="project-kanban"/>
 <view type="form" name="project-form"/>
 </action-view>
-
-<menuitem title="Parent-Record" name="Parent-root" icon="fa-thin fa-family" />
   </object-views> 

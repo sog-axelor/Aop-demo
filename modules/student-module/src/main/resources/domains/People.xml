@@ -7,24 +7,30 @@
 
 	<module name="student" package="com.axelor.student.db" />
 	<enum name="JOBS">
-	<item name="GOVERMENT" value="goverment"/>
-	<item name="PRIVATE" value="private"/>
+		<item name="GOVERMENT" value="goverment" />
+		<item name="PRIVATE" value="private" />
 	</enum>
-	
+
 	<sequence name="people.reference" increment="1" initial="1"
 		padding="4" prefix="PE" suffix="AXE" />
+
 	<entity name="People" lang="java" jsonAttrs="false">
-		<string name="jsonDetails" json="false" />
+	
+		<string name="jsonDetails" title="Multi Value"/>
+
 		<string name="uniqueTestFeild" title="unique Feild"
 			unique="true" min="1" max="10" namecolumn="true" />
+
 		<string name="location" large="true" multiline="true" />
-		<string name="reference" title="Refernces" sequence="people.reference" readonly="true"/>
+		<string name="reference" title="Refernces"
+			sequence="people.reference" readonly="true" />
 		<string name="password" password="true" title="Password"
 			encrypted="true" />
 		<date name="dob" title="Date of Birth" />
 		<time name="dobTime" title="Birth time" />
 		<enum name="salaried" ref="JOBS"></enum>
-		<many-to-one ref="com.axelor.meta.db.MetaFile" name="photo" title="Photo" />
+		<many-to-one ref="com.axelor.meta.db.MetaFile"
+			name="photo" title="Photo" />
 	</entity>
 
 </domain-models>
